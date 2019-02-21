@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
         <img [src]="product.image" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">{{product.description | slice:0:30}}...</p>
+          <span id="currency-custom">{{product.price | currency:product.currency$}}</span>
+          <p class="card-text">{{product.description | slice:0:40}}...</p>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Ver Detalle
           </button>
