@@ -20,4 +20,9 @@ export class ProductService {
   public getAllProducts(): Observable<any> {
     return this.http.get(`${ENV.baseUrl}/findall/product-score`, this.httpOptions);
   }
+
+  public addCardProduct(productId): Observable<any> {
+    console.log([{id: productId, quantity: 1}]);
+    return this.http.post(`${ENV.baseUrl}/add/cart`, [{id: productId, quantity: 1}], this.httpOptions);
+  }
 }
